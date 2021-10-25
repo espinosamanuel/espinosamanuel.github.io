@@ -125,6 +125,7 @@
          /* Google Fonts */
          @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
          .title{
+         max-width: 100%;
          padding: 4em;
          color: rgba(255,255,255,.75);
          font-family: 'Anonymous Pro', monospace;
@@ -157,15 +158,99 @@
          max-width: 100px;
          max-height: 70px;
          }
+
+         .skills{
+            color:rgba(255,255,255,.75)
+         }
+
+         .skills-table{
+            width: 100%;
+            max-width: 100%;
+         }
+
+         
+         .skills-table td{
+            text-align: center;
+            width:20%
+         }
+
+         .skills-title{
+         top: 50%;  
+         width: 24em;
+         margin: 0 auto;
+         font-size: 150%;
+         text-align: center;
+         white-space: nowrap;
+         overflow: hidden;
+         transform: translateY(-50%);    
+         }
+
+         .skill{
+            max-width: 80px;
+         }
+
+         .lang{
+            max-height: 40px;
+         }
+
+         .view-link{
+            color:rgba(255,255,255,.75);
+            font-size: 1.2em;
+         }
       </style>
+          <script type="text/javascript">
+             function switchView(view){
+                $(".view").hide();
+                $("#"+view).show();
+             }
+          </script>
    </head>
    <body>
       <div class="title">
          <h1 class="line-1 anim-typewriter">Manuel Espinosa</h1>
-         <div>Timeline</div>
-         <div>Skills</div>
-         <div>Contact me</div>
+         <div><a href="#" onClick="switchView('myTimeline')" class="view-link">Timeline</a></div>
+         <div><a  href="#" onClick="switchView('mySkills')" class="view-link">Skills</a></div>
+         <div><a  href="https://www.linkedin.com/in/manuel-espinosa-1b29bbb8/" target="blank" class="view-link">Contact me</a></div>
       </div>
+      <div id="mySkills" class="view skills" style="display:none">
+         <h2 class="skills-title">Coding</h2>
+         <p>
+            <table class="skills-table">
+               <thead>
+                  <td><h3>Front-end</h3></td>
+                  <td><h3>Back-end</h3</td>
+                  <td><h3>Database</h3</td>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>
+                        <img class="skill" alt="HTML5" title="HTML5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/220px-HTML5_logo_and_wordmark.svg.png">
+                        <img class="skill" alt="JavaScript" title="JavaScript" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Javascript-736400_960_720.png/180px-Javascript-736400_960_720.png">
+                        <img class="skill" alt="Bootstrap" title="Bootstrap" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/100px-Bootstrap_logo.svg.png">
+                        <img class="skill" alt="JQuery" title="JQuery" src="https://jquery.com/jquery-wp-content/themes/jquery/images/logo-jquery.png">
+                     </td>
+                     <td>
+                        <img class="skill" alt="Spring Framework" title="Spring Framework" src="https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg">
+                        <img class="skill" alt="Java"  title="Java" src="https://upload.wikimedia.org/wikipedia/it/thumb/2/2e/Java_Logo.svg/96px-Java_Logo.svg.png">
+                        <img class="skill" alt="PHP" title="PHP" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/260px-PHP-logo.svg.png">
+                        
+                     </td>
+                     <td>
+                        <img class="skill" alt="Oracle PLSQL" title="Oracle PLSQL" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg">
+                        <img class="skill" alt="MySQL" title="MySQL" src="https://www.mysql.com/common/logos/logo-mysql-170x115.png">
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </p>
+         <br>
+         <h2 class="skills-title" style="margin-top: 50px;">Languages</h2>
+         <p style="text-align: center;">
+            <img class="lang" alt="IT" title="IT" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/125px-Flag_of_Italy.svg.png">
+            <img class="lang" alt="EN" title="EN" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/280px-Flag_of_the_United_Kingdom_%283-5%29.svg.png">
+         </p>
+      </div>
+      <div id="myTimeline" class="view">
       <div class="timeline">
          <div class="container right">
             <div class="content">
@@ -188,7 +273,7 @@
          <div class="container left">
             <div class="content">
                <a href="https://www.italiankoiassociation.it" target="blank"><img src="https://www.italiankoiassociation.it/img/logo.jpg" class="card-logo" ></a>
-               <h2>Italian Koi Association</h2>
+               <h2>Free Lance Developer</h2>
                <i>2019</i>
                <p>Building and evolution of a web app used to share videos, photos and documents,
                   organize events and receive special discounts. It also includes a panel dedicated to
@@ -199,7 +284,7 @@
          <div class="container right">
             <div class="content">
                <a href="https://fondazionefloriani.eu" target="blank"><img src="https://fondazionefloriani.eu/wp-content/uploads/2016/10/logo_scuro.png" class="card-logo"></a>
-               <h2>Java Developer</h2>
+               <h2>Free Lance Developer</h2>
                <i>2016</i>
                <p>Development of a Java software for the digitalization of particular evaluation forms designed and used by psychologists on some patients for a research. The software allows in addition to the compilation, the printing of a PDF report containing the results of evaluations.</p>
             </div>
@@ -230,9 +315,10 @@
             </div>
          </div>
       </div>
-      <div style="width:100%;text-align:center; margin-top: 50px;margin-bottom: 50px; color:white">
+      <div style="width:100%;text-align:center; margin-top: 50px;margin-bottom: 50px; color:rgba(255,255,255,.75)">
          <h2>27/12/1995</h2>
          Born
       </div>
+   </div>
    </body>
 </html>
