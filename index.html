@@ -135,7 +135,6 @@
          top: 50%;  
          width: 24em;
          margin: 0 auto;
-         border-right: 2px solid rgba(255,255,255,.75);
          font-size: 300%;
          text-align: center;
          white-space: nowrap;
@@ -144,13 +143,10 @@
          }
          /* Animation */
          .anim-typewriter{
-         animation: typewriter 3s steps(15) 1s 1 normal both,
+         animation:
          blinkTextCursor 1000ms steps(15) infinite normal;
          }
-         @keyframes typewriter{
-         from{width: 0;}
-         to{width: 8.5em;}
-         }
+
          @keyframes blinkTextCursor{
          from{border-right-color: rgba(255,255,255,.75);}
          to{border-right-color: transparent;}
@@ -196,6 +192,7 @@
          .view-link{
             color:rgba(255,255,255,.75);
             font-size: 1.2em;
+            margin-left: 30px;
          }
       </style>
           <script type="text/javascript">
@@ -207,7 +204,9 @@
    </head>
    <body>
       <div class="title">
-         <h1 class="line-1 anim-typewriter">Manuel Espinosa</h1>
+         <h1 class="line-1">
+            <span class="typewrite" data-period="2000" data-type='[ "Manuel Espinosa", "Web Developer" ]'></span>
+          </h1>
          <div><a href="#" onClick="switchView('myTimeline')" class="view-link">Timeline</a></div>
          <div><a  href="#" onClick="switchView('mySkills')" class="view-link">Skills</a></div>
          <div><a  href="https://www.linkedin.com/in/manuel-espinosa-1b29bbb8/" target="blank" class="view-link">Contact me</a></div>
@@ -320,5 +319,67 @@
          Born
       </div>
    </div>
+   <script >
+     var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+    var cntFull = 0;
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="anim-typewriter wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+         cntFull ++;
+           if(cntFull >= 3){
+              return;
+           }
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+      </script>
    </body>
 </html>
