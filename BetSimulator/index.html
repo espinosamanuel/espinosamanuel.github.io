@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Welcome to BetSimulator’s documentation! &#8212; BetSimulator 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-betsimulator-s-documentation">
+<h1>Welcome to BetSimulator’s documentation!<a class="headerlink" href="#welcome-to-betsimulator-s-documentation" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<section id="module-core.process">
+<span id="core-process-data-processing"></span><h2><a class="reference internal" href="#module-core.process" title="core.process"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.process</span></code></a> – Data Processing<a class="headerlink" href="#module-core.process" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="core.process.DataFile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.process.</span></span><span class="sig-name descname"><span class="pre">DataFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.process.DataFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="core.process.DataFile.get_key">
+<span class="sig-name descname"><span class="pre">get_key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.process.DataFile.get_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="core.process.DataFile.get_tmp_name">
+<span class="sig-name descname"><span class="pre">get_tmp_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.process.DataFile.get_tmp_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="core.process.collapse">
+<span class="sig-prename descclassname"><span class="pre">core.process.</span></span><span class="sig-name descname"><span class="pre">collapse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">list_columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_postfix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.process.collapse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a row of a datafile and a list of its columns,
+takes in order the value of each column and returns the first one that is not empty</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="core.process.merge">
+<span class="sig-prename descclassname"><span class="pre">core.process.</span></span><span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">season_key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.process.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merges datafiles related to the same season from different leagues into a single csv file
+within the “data” directory</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="core.process.process">
+<span class="sig-prename descclassname"><span class="pre">core.process.</span></span><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#core.process.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepares data raw data for the backtester. At the end of this function the data directory should be filled.
+This function could be used multiple times without deleting data directory.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="core.process.process_country">
+<span class="sig-prename descclassname"><span class="pre">core.process.</span></span><span class="sig-name descname"><span class="pre">process_country</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.process.process_country" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process al datafiles for a given country producing csv files in the tmp directory</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="core.process.process_data_file">
+<span class="sig-prename descclassname"><span class="pre">core.process.</span></span><span class="sig-name descname"><span class="pre">process_data_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.process.process_data_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>For a datafile it creates a corresponding csv in the tmp directory of its league.
+The new csv contains only a few selected columns and some calculated variables.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="core.process.update_virtual_week">
+<span class="sig-prename descclassname"><span class="pre">core.process.</span></span><span class="sig-name descname"><span class="pre">update_virtual_week</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">league_map</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.process.update_virtual_week" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increments the counter in the league_map for the given team</p>
+</dd></dl>
+
+</section>
+<section id="strategies-base-strategy-base-strategy">
+<h2><a class="reference internal" href="#module-strategies.base_strategy" title="strategies.base_strategy"><code class="xref py py-mod docutils literal notranslate"><span class="pre">strategies.base_strategy</span></code></a> – Base Strategy<a class="headerlink" href="#strategies-base-strategy-base-strategy" title="Permalink to this heading">¶</a></h2>
+<span class="target" id="module-strategies.base_strategy"></span><dl class="py class">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">strategies.base_strategy.</span></span><span class="sig-name descname"><span class="pre">BaseStrategy</span></span><a class="headerlink" href="#strategies.base_strategy.BaseStrategy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Abstract class that serves as a mold for implementing betting strategies</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>perimeter</strong> (<em>list</em><em>, </em><em>optional</em>) – A list of strings corresponding to the leagues on which you want to bet.</p></li>
+<li><p><strong>context</strong> – A dictionary that contains all the info available at the time of the bet.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.accept">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.accept" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function must be implemented in order to determine if the event corresponding to the given row
+is acceptable to the strategy or not.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.aggregate">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">aggregate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.aggregate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.context">
+<span class="sig-name descname"><span class="pre">context</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.context" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.get_bet">
+<span class="sig-name descname"><span class="pre">get_bet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.get_bet" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.get_bet_amount">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_bet_amount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.get_bet_amount" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function determines the amount to be used for the current bet.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.in_perimeter">
+<span class="sig-name descname"><span class="pre">in_perimeter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.in_perimeter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.perimeter">
+<span class="sig-name descname"><span class="pre">perimeter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.perimeter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.select_out">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">select_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.select_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function needs to be implemented in order to select which outcome is to be used for the bet.
+The chosen outcome should be one of the columns in the processed dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="strategies.base_strategy.BaseStrategy.set_result">
+<span class="sig-name descname"><span class="pre">set_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#strategies.base_strategy.BaseStrategy.set_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="core-backtester-backtesting-a-strategy">
+<h2><a class="reference internal" href="#module-core.backtester" title="core.backtester"><code class="xref py py-mod docutils literal notranslate"><span class="pre">core.backtester</span></code></a> – Backtesting a strategy<a class="headerlink" href="#core-backtester-backtesting-a-strategy" title="Permalink to this heading">¶</a></h2>
+<span class="target" id="module-core.backtester"></span><dl class="py class">
+<dt class="sig sig-object py" id="core.backtester.Simulation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">core.backtester.</span></span><span class="sig-name descname"><span class="pre">Simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strategy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.backtester.Simulation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class is a representation of the simulation flow.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>strategy</strong> (<em>str</em>) – The name of the used strategy</p></li>
+<li><p><strong>bets</strong> (<em>list</em>) – The list of <code class="xref py py-class docutils literal notranslate"><span class="pre">core.backtester.Bet</span></code> used in the simulation</p></li>
+<li><p><strong>balance_df</strong> (<cite>pandas.DataFrame</cite>) – A dataframe containing the weekly time series of the balance</p></li>
+<li><p><strong>wins</strong> (<em>int</em>) – The number of won bets</p></li>
+<li><p><strong>defeats</strong> (<em>int</em>) – The number of lost bets</p></li>
+<li><p><strong>seasons</strong> (<em>list</em>) – The list of seasons used in the simulation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="core.backtester.test">
+<span class="sig-prename descclassname"><span class="pre">core.backtester.</span></span><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strategy_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#core.backtester.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function back-tests the strategy given as input. The test result is generated in the output directory.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">BetSimulator</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Manuel Espinosa.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,41 @@
+Welcome to BetSimulator's documentation!
+========================================
+
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+:mod:`core.process` -- Data Processing
+--------------------------------------------
+
+.. automodule:: core.process
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+:mod:`strategies.base_strategy` -- Base Strategy
+--------------------------------------------
+
+.. automodule:: strategies.base_strategy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+:mod:`core.backtester` -- Backtesting a strategy
+--------------------------------------------
+
+.. automodule:: core.backtester
+   :members:
+   :undoc-members:
+   :show-inheritance:
